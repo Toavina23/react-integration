@@ -12,19 +12,20 @@ import javax.persistence.Id;
 public class Student {
     @Id
     @Column(unique = true, nullable = false)
-    @GeneratedValue()
+    @GeneratedValue
     Integer id;
     @Column
     String name;
     @Column
     int age;
 
-    public int getId() {
-        return id;
+
+    
+    public Student() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {
@@ -40,6 +41,11 @@ public class Student {
     }
 
     public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Student(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 

@@ -12,8 +12,14 @@ import com.toavina.reactintegration.repositories.StudentRepositories;
 public class StudentService {
     @Autowired
     StudentRepositories studentRepositories;
-    public List<Student> getAllStudents(){
+
+    public List<Student> getAllStudents() {
         List<Student> students = studentRepositories.findAll();
-        return students; 
-    } 
+        return students;
+    }
+
+    public Student saveStudent(Student student){
+        Student savedStudent = studentRepositories.<Student>save(student);
+        return savedStudent;
+    }
 }
